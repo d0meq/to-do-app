@@ -9,6 +9,7 @@ function ToDo() {
     const [date, setDate] = useState('')
     const [color, setColor] = useState('#9DBEBB')
     const [body, setBody] = useState('#9DBEBB')
+    const darker = darkenColor(color, 10)
 
     const addTaskButtonStyle = {
         background: '#7fa8a6',
@@ -28,7 +29,7 @@ function ToDo() {
     }
 
     const restButtonStyle = {
-        background: '#7fa8a6',
+        background: darker,
         border: 'none',
         borderRadius: '25px',
         padding: '5px 10px',
@@ -138,9 +139,7 @@ function ToDo() {
 
 
     function handleColorChange(e){
-        setColor(e.target.value,
-            
-        )
+        setColor(e.target.value)
     }
 
     function changeColor() {
@@ -168,11 +167,11 @@ function ToDo() {
         if (isWhite(color)) {
             header.style.color = '#000000';
             addTaskButton.style.color = '#000000';
-            selectedColor.style.color = '#000000';
+            selectedColor.style.color = '#FFFFFF';
         } else {
             header.style.color = '#FFFFFF';
             addTaskButton.style.color = '#FFFFFF';
-            selectedColor.style.color = '#FFFFFF';
+            selectedColor.style.color = '#000000';
         }
 
         setColor(color)
@@ -200,13 +199,13 @@ function ToDo() {
         const markAsDoneButtons = document.querySelectorAll('.mark-as-done');
     
         removeTaskButtons.forEach(button => {
-            button.style.background = 'linear-gradient(145deg, #062c42, #074663)';
+            button.style.background = '#7fa8a6';
             button.style.color = '#FFFFFF';
             button.style.transition = '0.3s';
         });
     
         markAsDoneButtons.forEach(button => {
-            button.style.background = 'linear-gradient(145deg, #062c42, #074663)';
+            button.style.background = '#7fa8a6';
             button.style.color = '#FFFFFF';
             button.style.transition = '0.3s';
         });
