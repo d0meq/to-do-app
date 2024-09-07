@@ -1,0 +1,141 @@
+body{
+  background-color: white;
+  color: black;
+}
+
+.card{
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  max-width: 250px;
+  display: inline-block;
+}
+
+.card .cardImage{
+  max-width: 60%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.card .cardTitle{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: hsl(0, 0%, 20%);
+}
+
+.card .cardText{
+  font-family: Arial, Helvetica, sans-serif;
+  color: hsl(0, 0%, 40%);
+}
+
+.student{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  padding: 10px;
+  border: 1px solid hsl(0, 50%, 80%);
+}
+
+.student p{
+  margin: 0;
+}
+
+.welcome-message{
+  font-size: 2.5em;
+  background-color: rgb(85, 255, 6);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.login-prompt{
+  font-size: 2.5em;
+  background-color: rgb(255, 6, 6);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.list-category{
+  font-size: 2.5em;
+  font-weight: bold;
+  color: hsl(0, 0%, 20%);
+  margin-bottom: 10px;
+  text-align: center;
+  border: 3px solid;
+  border-radius: 5px;
+  background-color: rgb(34, 191, 253);
+}
+
+.list-items li{
+  font-size: 2em;
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+}
+
+.list-items li:hover{
+  color: rgb(34, 191, 253);
+  cursor: pointer;
+}
+
+.counter{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serifi;
+}
+
+.number-display{
+  font-size: 4em;
+  color: rgb(66, 154, 255);
+  margin: 0;
+}
+
+.button{
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: rgb(66, 154, 255);
+  color: white;
+}
+
+.button:hover{
+  background-color: rgb(251, 255, 25);
+  color: black;
+  transition: 0.3s;
+}
+
+.restart-button{
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: rgb(255, 88, 66);
+  color: white;
+}
+
+.restart-button:hover{
+  background-color: rgb(255, 149, 10);
+  color: black;
+}
+
+.color-picker-container{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.color-display{
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 3px solid black;
+  margin-bottom: 10px;
+}
