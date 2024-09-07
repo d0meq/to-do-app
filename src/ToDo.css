@@ -9,6 +9,7 @@
 .main-container{
     background-color: #9DBEBB;
     height: auto;
+    width: 100%;
     min-height: 100vh;
     text-align: center;
 }
