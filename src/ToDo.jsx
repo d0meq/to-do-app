@@ -191,7 +191,7 @@ function ToDo() {
         );
     
         setBody(
-            addTaskButton.style.background = 'linear-gradient(145deg, #062c42, #074663)',
+            addTaskButton.style.background = '#7fa8a6',
             addTaskButton.style.color = '#FFFFFF',
             addTaskButton.style.transition = '0.3s'
         );
