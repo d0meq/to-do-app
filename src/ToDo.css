@@ -35,6 +35,7 @@ ol{
     width: 100%;
     color: #FFFFFF;
     display: flex;
+    text-align: center;
     flex-direction: column;
     justify-self: flex-start;
     align-items: center;
@@ -42,7 +43,7 @@ ol{
 }
 
 li{
-    text-align: left;
+    text-align: center;
     width: auto;
     list-style-type: none;
     padding: 20px;
@@ -52,6 +53,7 @@ li{
 .input-container{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin: 20px;
     box-sizing: border-box;
 }
@@ -138,4 +140,25 @@ input::placeholder{
 .settings-content input{
     width: 30%;
     height: 13vh;
+}
+
+@media (width < 450px) {
+    .settings-header{
+        display: none;
+    }
+
+    #settings-bars{
+        font-size: 2rem;
+        float: left;
+        padding: 9px;
+        box-sizing: border-box;
+        width: 1%;
+    }
+
+}
+
+@media (width > 450px){
+    #settings-bars{
+        display: none;
+    }
 }

@@ -269,7 +269,7 @@ function ToDo() {
 
     return (
         <div className='main-container' id='main-container'>
-            <h2 id='header'>To Do Ola <span onClick={showSettings} className='settings-header' id='settings-header'>Settings</span></h2>
+            <h2 id='header'>To Do Ola <span onClick={showSettings} className='settings-header' id='settings-header'>Settings</span><i className='fa fa-bars' id='settings-bars' onClick={showSettings} ></i></h2>
 
             <div id='modal' className='modal'>
                 <div className="modal-content">
