@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './ToDo.css'
 
 function ToDo() {
@@ -66,6 +66,19 @@ function ToDo() {
     const addTaskButton = document.getElementById('add-task')
     const selectedColor = document.getElementById('selected-color')
 
+    useEffect(() => {
+        const savedTasks = localStorage.getItem('tasks')
+        if(savedTasks){
+            setTasks(JSON.parse(savedTasks))
+        }
+    }, [])
+
+    useEffect(() => {
+        if(tasks.length > 0){
+            localStorage.setItem('tasks', JSON.stringify(task))
+        }
+    }, [tasks])
+
     function handleTasks() {
         const newTask = { name: taskName, description: description, date: date, done: false };
     
@@ -104,7 +117,9 @@ function ToDo() {
     }
 
     function removeTasks(index) {
-        setTasks(t => t.filter((_, i) => i !== index))
+        const updatedTasks = tasks.filter((_, i) => i !== index)
+        setTaskName(updatedTasks)
+        localStorage.setItem('taskt', JSON.stringify(updatedTasks))
     }
 
     function markAsDone(index) {
