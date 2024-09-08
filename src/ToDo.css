@@ -161,6 +161,5 @@ input::placeholder{
 @media (width > 450px){
     #settings-bars{
         display: none;
-        border: 1px solid black;
     }
 }
