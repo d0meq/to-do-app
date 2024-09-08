@@ -10,7 +10,7 @@ function ToDo() {
     const [color, setColor] = useState('#9DBEBB')
     const [body, setBody] = useState('#9DBEBB')
     const darker = darkenColor(color, 10)
-    const test = 13
+    const test = 10
 
     const addTaskButtonStyle = {
         background: '#7fa8a6',
