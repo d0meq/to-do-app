@@ -64,14 +64,21 @@ function ToDo() {
     const main = document.getElementById('main-container')
     const header = document.getElementById('header')
     const addTaskButton = document.getElementById('add-task')
-    const selectedColor = document.getElementById('selected-color')
+    const selectColor = document.getElementById('select-color')
 
     useEffect(() => {
-        const savedTasks = localStorage.getItem('tasks')
-        if(savedTasks){
-            setTasks(JSON.parse(savedTasks))
+        const savedTasks = localStorage.getItem('tasks');
+        const savedColor = localStorage.getItem('selectedColor');
+        
+        if (savedTasks) {
+            setTasks(JSON.parse(savedTasks));
         }
-    }, [])
+
+        if (savedColor) {
+            setColor(savedColor);
+            applyColor(savedColor)
+        }
+    }, []);
 
     useEffect(() => {
         if(tasks.length > 0){
@@ -158,73 +165,80 @@ function ToDo() {
         setColor(e.target.value)
     }
 
-    function changeColor() {
-        const darkerColor = darkenColor(color, 10);
+    function applyColor(selectedColor) {
+        const darkerColor = darkenColor(selectedColor, 10);
     
-        setBody(
-            main.style.background = color,
-            header.style.background = darkerColor,
-            addTaskButton.style.background = darkerColor
-        );
+        main.style.background = selectedColor,
+        header.style.background = darkerColor,
+        addTaskButton.style.background = darkerColor
     
         const removeTaskButtons = document.querySelectorAll('.remove-task');
         const markAsDoneButtons = document.querySelectorAll('.mark-as-done');
     
         removeTaskButtons.forEach(button => {
             button.style.background = darkerColor;
-            button.style.color = isWhite(color) ? '#000000' : '#FFFFFF';
+            button.style.color = isWhite(selectedColor) ? '#000000' : '#FFFFFF';
         });
     
         markAsDoneButtons.forEach(button => {
             button.style.background = darkerColor;
-            button.style.color = isWhite(color) ? '#000000' : '#FFFFFF';
+            button.style.color = isWhite(selectedColor) ? '#000000' : '#FFFFFF';
         });
     
-        if (isWhite(color)) {
+        if (isWhite(selectedColor)) {
             header.style.color = '#000000';
             addTaskButton.style.color = '#000000';
-            selectedColor.style.color = '#FFFFFF';
+            selectColor.style.color = '#FFFFFF';
         } else {
             header.style.color = '#FFFFFF';
             addTaskButton.style.color = '#FFFFFF';
-            selectedColor.style.color = '#000000';
+            selectColor.style.color = '#000000';
         }
 
-        setColor(color)
+    }
+
+    function changeColor(){
+        applyColor(color)
+        localStorage.setItem('selectedColor', color)
     }
     
     function restoreToDefault() {
-        setBody(
-            main.style.background = '#9DBEBB',
-            main.style.transition = '0.3s'
-        );
+        // setBody(
+        //     main.style.background = '#9DBEBB',
+        //     main.style.transition = '0.3s'
+        // );
     
-        setBody(
-            header.style.background = '#468189',
-            header.style.color = '#FFFFFF',
-            header.style.transition = '0.3s'
-        );
+        // setBody(
+        //     header.style.background = '#468189',
+        //     header.style.color = '#FFFFFF',
+        //     header.style.transition = '0.3s'
+        // );
     
-        setBody(
-            addTaskButton.style.background = '#7fa8a6',
-            addTaskButton.style.color = '#FFFFFF',
-            addTaskButton.style.transition = '0.3s'
-        );
+        // setBody(
+        //     addTaskButton.style.background = '#7fa8a6',
+        //     addTaskButton.style.color = '#FFFFFF',
+        //     addTaskButton.style.transition = '0.3s'
+        // );
     
-        const removeTaskButtons = document.querySelectorAll('.remove-task');
-        const markAsDoneButtons = document.querySelectorAll('.mark-as-done');
+        // const removeTaskButtons = document.querySelectorAll('.remove-task');
+        // const markAsDoneButtons = document.querySelectorAll('.mark-as-done');
     
-        removeTaskButtons.forEach(button => {
-            button.style.background = '#7fa8a6';
-            button.style.color = '#FFFFFF';
-            button.style.transition = '0.3s';
-        });
+        // removeTaskButtons.forEach(button => {
+        //     button.style.background = '#7fa8a6';
+        //     button.style.color = '#FFFFFF';
+        //     button.style.transition = '0.3s';
+        // });
     
-        markAsDoneButtons.forEach(button => {
-            button.style.background = '#7fa8a6';
-            button.style.color = '#FFFFFF';
-            button.style.transition = '0.3s';
-        });
+        // markAsDoneButtons.forEach(button => {
+        //     button.style.background = '#7fa8a6';
+        //     button.style.color = '#FFFFFF';
+        //     button.style.transition = '0.3s';
+        // });
+
+        const defaultColor = '#9DBEBB'
+        setColor(defaultColor)
+        applyColor(defaultColor)
+        localStorage.setItem('selectedColor', defaultColor)
     }
 
     function isWhite(color) {
@@ -296,7 +310,7 @@ function ToDo() {
             <div className="settings" id='settings'>
                 <div className="settings-content">
                     <input type="color" value={color} onChange={handleColorChange}/>
-                    <p id='selected-color'>Selected color: {color}</p>
+                    <p id='select-color'>Selected color: {color}</p>
                     <button style={restButtonStyle} onClick={changeColor} className='add-task' id='okay-button'>Okay</button>
                     <button style={restButtonStyle} onClick={restoreToDefault} className='add-task' id='default-button'>Default</button>
                 </div>
