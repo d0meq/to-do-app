@@ -19,8 +19,10 @@ function ToDo() {
     }, []);
 
     useEffect(() => {
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }, [tasks]);
+        if(tasks.length > 0){
+            localStorage.setItem('tasks', JSON.stringify(tasks))
+        }
+    }, [tasks])
 
     const addTaskButtonStyle = {
         background: '#7fa8a6',
