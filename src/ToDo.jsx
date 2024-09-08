@@ -110,7 +110,9 @@ function ToDo() {
     }
 
     function removeTasks(index) {
-        setTasks(t => t.filter((_, i) => i !== index));
+        const updatedTasks = tasks.filter((_, i) => i !== index)
+        setTasks(updatedTasks)
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks))
     }
 
     function markAsDone(index) {
