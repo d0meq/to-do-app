@@ -75,7 +75,7 @@ function ToDo() {
 
     useEffect(() => {
         if(tasks.length > 0){
-            localStorage.setItem('tasks', JSON.stringify(task))
+            localStorage.setItem('tasks', JSON.stringify(tasks))
         }
     }, [tasks])
 
@@ -118,8 +118,8 @@ function ToDo() {
 
     function removeTasks(index) {
         const updatedTasks = tasks.filter((_, i) => i !== index)
-        setTaskName(updatedTasks)
-        localStorage.setItem('taskt', JSON.stringify(updatedTasks))
+        setTasks(updatedTasks)
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks))
     }
 
     function markAsDone(index) {
