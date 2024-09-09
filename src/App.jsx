@@ -15,6 +15,7 @@ import ArrayUpdateObject from './ArrayUpdateObject.jsx';
 import ToDo from './ToDo.jsx';
 import UseEffect from './UseEffect.jsx';
 import DigitalClock from './DigitalClock.jsx';
+import ComponentA from './ComponentA.jsx';
 
 function App() {
   // const fruits = [{id: 1, name:"apple", calories: 95},
@@ -31,7 +32,7 @@ function App() {
   
   return(
     <>
-      <DigitalClock />
+      <ComponentA />
     </>
   );
 }
