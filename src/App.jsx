@@ -1,21 +1,5 @@
-import Card from './Card.jsx'
-import Button from './Button.jsx'
-import Student from './Student.jsx'
-import UserGretting from './UserGretting.jsx';
-import List from './List.jsx';
-import Button2 from './Button2.jsx'
-import ProfilePicture from './ProfilePicture.jsx';
-import MyComponent from './MyComponent.jsx';
-import Counter from './Counter.jsx';
-import Change from './Change.jsx';
-import ColorPicker from './ColorPicker.jsx';
-import ObjectUpdate from './UpdateObject.jsx';
-import ArrayUpdate from './ArrayUpdate.jsx';
-import ArrayUpdateObject from './ArrayUpdateObject.jsx';
 import ToDo from './ToDo.jsx';
-import UseEffect from './UseEffect.jsx';
-import DigitalClock from './DigitalClock.jsx';
-import ComponentA from './ComponentA.jsx';
+
 
 function App() {
   // const fruits = [{id: 1, name:"apple", calories: 95},
