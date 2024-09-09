@@ -9,7 +9,7 @@ function ToDo() {
     const [taskName, setTaskName] = useState('');
     const [description, setDescription] = useState('');
     const [date, setDate] = useState('');
-    const [color, setColor] = useState(localStorage.getItem('selectedColor') || defaultColor); // Load color from localStorage or use default
+    const [color, setColor] = useState(localStorage.getItem('selectedColor') || defaultColor);
     const darker = darkenColor(color, 10);
 
     const addTaskButtonStyle = {
@@ -67,7 +67,6 @@ function ToDo() {
             setTasks(JSON.parse(savedTasks));
         }
 
-        // Apply saved color if it exists
         if (localStorage.getItem('selectedColor')) {
             applyColor(localStorage.getItem('selectedColor'));
         }
@@ -194,7 +193,7 @@ function ToDo() {
 
     function changeColor() {
         applyColor(color);
-        localStorage.setItem('selectedColor', color); // Save selected color to localStorage
+        localStorage.setItem('selectedColor', color);
     }
 
     function restoreToDefault() {
@@ -228,8 +227,8 @@ function ToDo() {
             button.style.transition = '0.3s';
         });
 
-        localStorage.removeItem('selectedColor'); // Remove color from localStorage
-        setColor(defaultColor); // Reset color state to default
+        localStorage.removeItem('selectedColor');
+        setColor(defaultColor);
     }
 
     function isWhite(color) {
