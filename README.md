@@ -1,8 +1,53 @@
-# React + Vite
+# To Do App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
+- [To Do App](#to-do-app)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Configuration](#configuration)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-Currently, two official plugins are available:
+## Introduction
+This is a simple To Do application built with React and Vite. It allows users to add, remove, and mark tasks as done. The app also supports color customization for the UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Add new tasks with a name, description, and due date.
+- Remove tasks.
+- Mark tasks as done or undone.
+- Customize the background color of the app.
+- Persistent storage using `localStorage`.
+
+## Installation
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/your-username/your-repo-name.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd your-repo-name
+    ```
+3. Install the dependencies:
+    ```sh
+    npm install
+    ```
+
+## Usage
+1. Start the development server:
+    ```sh
+    npm run dev
+    ```
+2. Open your browser and navigate to `http://localhost:3000`.
+
+## Configuration
+- The app uses Vite for bundling and development. Configuration options can be found in the  file.
+- ESLint is used for linting. Configuration options can be found in the  file.
+
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request.
+
+## License
+This project is licensed under the MIT License.
